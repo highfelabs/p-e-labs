@@ -1,0 +1,19 @@
+name: Multi Job
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Testing"
+
+  build:
+    needs: test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Building"
